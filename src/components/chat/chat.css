@@ -5,6 +5,24 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    ::-webkit-scrollbar {
+        width: 8px; /* Larghezza della scrollbar */
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: rgba(17, 25, 40, 0.5); /* Colore del track della scrollbar */
+        border-radius: 10px; /* Arrotondamento del track */
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background-color: #888; /* Colore della thumb */
+        border-radius: 10px; /* Arrotondamento della thumb */
+        border: 2px solid rgba(17, 25, 40, 0.5); /* Bordo della thumb */
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #555; /* Colore della thumb al passaggio del mouse */
+    }
 
     .top{
         padding: 20px;
@@ -51,6 +69,50 @@
     .center{
         padding: 20px;
         flex: 1;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .message{
+            max-width: 70%;
+            display: flex;
+            gap: 20px;
+    
+        &.own {
+            align-self: flex-end;
+            p{
+                background-color: #5183fe;
+
+            }
+        }
+        img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .texts{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            img{
+                width: 100%;
+                height: 300px;
+                border-radius: 10px;
+                object-fit: cover;
+            }
+        }
+        p{
+            padding: 20px;
+            background-color: rgba(17, 25, 40, 0.3);
+            border-radius: 10px;
+        }
+        span{
+            font-size: 13px;
+        }
+        }   
+        
     }
     .bottom{
         margin-top: auto;
